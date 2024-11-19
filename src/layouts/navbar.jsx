@@ -114,7 +114,7 @@ const Navbar = () => {
 
                 </div>
 
-                <select onChange={(e) => handleChangeLanguage(e)} className="h-[2rem] w-[7%]" name="" id="">
+                <select onChange={(e) => handleChangeLanguage(e)} className="h-[2rem] w-[7%] lg:block hidden " name="" id="">
                     {
                         language.map(({ label, code }, index) => (
                             <option selected={code == selectedLanguage} key={index} value={code}>{label}</option>
