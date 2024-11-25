@@ -7,10 +7,13 @@ import { FaBook, FaHeart, FaPaintBrush } from "react-icons/fa";
 import { IoStar } from "react-icons/io5";
 import { useAppContext } from '../../../utils/ContextProvider';
 import TransText from '../../../components/TransText';
+import { useNavigate } from 'react-router-dom';
 
 
 const AllPrograms = () => {
     const {selectedLanguage} = useAppContext()
+    const navigate = useNavigate()
+
     return (
         <>
             <section dir={selectedLanguage == "ar" ? "rtl" : "ltr"} className=' bg-[#F9FAFB]'>
@@ -84,7 +87,7 @@ const AllPrograms = () => {
                     </div>
 
                     <div className="flex flex-col items-center py-[4rem] w-[100%] gap-5 px-[0.3rem]  ">
-                        <button className='px-[2rem] py-[.7rem] rounded-[20px] text-white font-bold bg-[#433bff] '><TransText fr=" Soutenez nos programmes" ar="دعم برامجنا" /></button>
+                        <button onClick={()=>{navigate("/supportUs")}} className='px-[2rem] py-[.7rem] rounded-[20px] text-white font-bold bg-[#433bff] '><TransText fr=" Soutenez nos programmes" ar="دعم برامجنا" /></button>
                         <p className='lg:w-[60%] w-[100%] text-[17px] text-center font-semibold text-[#333333] '>
                         <TransText fr="Chaque programme est dédié à favoriser un environnement équilibré pour les enfants. En soutenant nos programmes, vous faites une différence significative dans leur vie, leur fournissant les outils et les expériences dont ils ont besoin pour construire un avenir meilleur" 
                         ar="كل برنامج مكرس لت  بيئة متكاملة للأطفال. من خلال دعم برامجنا، فإنك تحدث فرقًا كبيرًا في حياتهم، مما يوفر لهم الأدوات والخبرات التي يحتاجونها لبناء مستقبل أكثر إشراقًا" 

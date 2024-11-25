@@ -1,8 +1,11 @@
 import React from 'react';
 import TransText from '../../../components/TransText';
+import { useNavigate } from 'react-router-dom';
 
 
 const Introduction = () => {
+
+    const navigate = useNavigate();
     return (
         <>
             <section className="py-[6em] text-center lg:px-[10em] px-[0.5rem] flex flex-col items-center  gap-4 ">
@@ -13,7 +16,7 @@ const Introduction = () => {
                     ar="في دار الأيتام برنوصي، نحن ملتزمون بتوفير منزل مليء بالحب، وتعليم عالي الجودة، ورعاية أساسية للأطفال الأيتام والمستضعفين في المغرب. هدفنا هو تمكين هؤلاء الأطفال لبناء مستقبل أكثر إشراقًا لأنفسهم ولمجتمعاتهم."
                     />
                 </p>
-                <button className='font-bold lg:py-[1rem] py-[.8rem] lg:px-[2.5rem] px-[1.6rem] lg:text-[18px] rounded-full bg-[#0000FF] text-white'><TransText fr="En savoir plus" ar="تعرّف على المزيد" /> </button>
+                <button onClick={()=>{navigate("/about")}} className='font-bold lg:py-[1rem] py-[.8rem] lg:px-[2.5rem] px-[1.6rem] lg:text-[18px] rounded-full bg-[#0000FF] text-white'><TransText fr="En savoir plus" ar="تعرّف على المزيد" /> </button>
             </section>
         </>
     );

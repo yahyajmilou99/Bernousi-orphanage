@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -63,11 +63,11 @@ const Navbar = () => {
                     </div>
 
                     <div className={isMenuOpen ? "w-full md:block md:w-auto" : "w-full md:block md:w-auto hidden"} id="mobile-menu">
-                        <ul className={"flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"}>
+                        <ul className={"flex flex-col mt-4 md:flex-row md:gap-14 md:mt-0 md:text-sm md:font-medium"}>
                             <li>
                                 <Link
                                     to={"/"}
-                                    className="block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 "
+                                    className="block py-2 md:pr-0 pr-4 pl-3 text-gray-700 text-[18px] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
                                     aria-current="page"
                                 >
                                     Home
@@ -77,7 +77,7 @@ const Navbar = () => {
                             <li>
                                 <Link
                                     to={"/about"}
-                                    className="block py-2 pr-4 pl-3 rounded md:bg-transparent  md:p-0 "
+                                    className="block py-2 md:pr-0 pr-4 pl-3 text-gray-700 text-[18px] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
                                     aria-current="page"
                                 >
                                     About
@@ -87,7 +87,7 @@ const Navbar = () => {
                             <li>
                                 <Link
                                     to={"/programs"}
-                                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
+                                    className="block py-2 md:pr-0 pr-4 pl-3 text-gray-700 text-[18px] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
                                 >
                                     Programs
                                 </Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
                             <li>
                                 <Link
                                     to={"/supportUs"}
-                                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
+                                    className="block py-2 md:pr-0 pr-4 pl-3 text-gray-700 text-[18px] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
                                 >
                                     Donate
                                 </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
                             <li>
                                 <Link
                                     to={"/contactUs"}
-                                    className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
+                                    className="block py-2 md:pr-0 pr-4 pl-3 text-gray-700 text-[18px] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
                                 >
                                     Contact
                                 </Link>
@@ -112,15 +112,15 @@ const Navbar = () => {
                     </div>
 
 
-                </div>
-
-                <select onChange={(e) => handleChangeLanguage(e)} className="h-[2rem] w-[7%] lg:block hidden " name="" id="">
+                <select onChange={(e) => handleChangeLanguage(e)} className={` text-gray-700 py-2 pr-4 pl-3 text-[18px] md:block ${isMenuOpen?`block` : `hidden`}`} name="" id="">
                     {
                         language.map(({ label, code }, index) => (
                             <option selected={code == selectedLanguage} key={index} value={code}>{label}</option>
                         ))
                     }
                 </select>
+                </div>
+
 
             </nav>
 

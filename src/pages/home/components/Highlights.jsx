@@ -3,6 +3,7 @@ import { TbUsersGroup } from "react-icons/tb";
 import { FaRegHeart } from "react-icons/fa";
 import { IoBookOutline } from "react-icons/io5";
 import TransText from '../../../components/TransText';
+import { Link } from 'react-router-dom';
 
 const Highlights = () => {
     return (
@@ -29,8 +30,12 @@ const Highlights = () => {
                     </div>
                 </div>
                 <div className="py-[4rem] w-[100%] flex lg:flex-row flex-col items-center justify-center gap-9 ">
-                    <button className='lg:w-[20%] w-[45%] py-[0.7rem] text-[20px] bg-[#32CD32] hover:shadow-lg hover:shadow-[#32cd32a6] hover:scale-[1.05] transition duration-150 text-white font-bold rounded-full '><TransText fr="faire un don" ar="تبرع" /></button>
-                    <button className='lg:w-[20%] w-[45%] py-[0.7rem] text-[20px] bg-[#4D4DFF] text-white font-bold rounded-full '><TransText fr="Bénévole" ar="تطوع" /></button>
+                    <Link className='lg:w-[20%] w-[45%] py-[0.7rem] text-[20px] text-center bg-[#32CD32] hover:shadow-lg hover:shadow-[#32cd32a6] hover:scale-[1.05] transition duration-150 text-white font-bold rounded-full ' to={"supportUs"}>
+                        <button ><TransText fr="faire un don" ar="تبرع" /></button>
+                    </Link>
+                    <Link className='lg:w-[20%] w-[45%] py-[0.7rem] text-[20px] text-center bg-[#4D4DFF] text-white font-bold rounded-full ' to={"/contactUs"}>
+                        <button ><TransText fr="Bénévole" ar="تطوع" /></button>
+                    </Link>
                 </div>
             </section>
         </>

@@ -3,7 +3,10 @@ import { BsTelephone } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+    const navigate = useNavigate()
+
     return (
         <>
             <footer className='py-[3rem] px-[1rem] bg-[#1A1A3D] text-white w-[100%] '>
@@ -28,10 +31,10 @@ const Footer = () => {
                     <div className="flex flex-col gap-4  lg:w-[30%] w-[100%] ">
                         <p className='font-bold text-[22px]'>Quick Links</p>
                         <div className='flex flex-col gap-3 font-semibold '>
-                            <p>About Us</p>
-                            <p>Our Programs</p>
-                            <p>Ways to Give</p>
-                            <p>Contact</p>
+                            <p className='cursor-pointer' onClick={()=>{navigate("/about")}}>About Us</p>
+                            <p className='cursor-pointer' onClick={()=>{navigate("/programs")}}>Our Programs</p>
+                            <p className='cursor-pointer' onClick={()=>{navigate("/supportUs")}}>Ways to Give</p>
+                            <p className='cursor-pointer' onClick={()=>{navigate("/contactUs")}}>Contact</p>
                         </div>
                     </div>
                     <div className="flex flex-col gap-4  lg:w-[30%] w-[100%] ">

@@ -7,7 +7,7 @@ export const MyContext = createContext();
 export const ContextProvider = ({children}) => {
 
     const language = [
-        { label: "francais", code: "fr" },
+        { label: "Francais", code: "fr" },
         { label: "العربية", code: "ar" },
     ];
 
